@@ -1,10 +1,7 @@
 package com.nhnacademy;
 
-import com.nhnacademy.board.command.Command;
-import com.nhnacademy.board.command.LoginFormController;
-import com.nhnacademy.board.command.LoginProcessingController;
-import com.nhnacademy.board.command.LogoutProcessingController;
-import com.nhnacademy.board.command.UsersFormController;
+import com.nhnacademy.board.command.*;
+
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -53,10 +50,15 @@ public class FrontServlet extends HttpServlet {
             command = new LoginProcessingController();
         } else if ("/logout.do".equals(servletPath)) {
             command = new LogoutProcessingController();
-        } else if ("/users.do".equalsIgnoreCase(servletPath) && "GET".equalsIgnoreCase(method)){
+        } else if ("/users.do".equals(servletPath) && "GET".equalsIgnoreCase(method)){
             command = new UsersFormController();
+        } else if ("/userRead.do".equals(servletPath) && "GET".equalsIgnoreCase(method)) {
+            command = new UserReadController();
         }
 
         return command;
     }
 }
+//Settings -> Editor -> Appearance -> Show whitespaces 체크
+//
+//출처: https://ddakker.tistory.com/288 [ddakker님의 블로그]

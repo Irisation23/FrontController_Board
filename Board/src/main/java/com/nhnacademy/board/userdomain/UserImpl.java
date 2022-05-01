@@ -6,6 +6,8 @@ public class UserImpl implements User {
     String name;
     String profileImg;
 
+    String grade;
+
     public UserImpl(String id, String pwd, String name, String profileImg) {
         this.id = id;
         this.pwd = pwd;

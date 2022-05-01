@@ -9,24 +9,31 @@
     <title>MemberList</title>
 </head>
 <body>
-<form method="post" action="/members.do">
     <table>
         <tr>
             <td>id</td>
-            <td>pwd</td>
             <td>name</td>
-            <td>profile</td>
+            <td>grade</td>
+            <td>update</td>
+            <td>delete</td>
         </tr>
         <c:forEach var="user" items="${userList}">
             <tr>
-                <td>${user.getId()}</td>
+                <td><a href="/userRead.do?id=${user.getId()}"> ${user.getId()}</a></td>
                 <td>${user.getPassword()}</td>
                 <td>${user.getName()}</td>
                 <td>${user.getProfileFileName()}</td>
+                <td>
+                    <button type="button" onclick="location.href='/userUpdate.do?id=${user.getId()}'">update</button>
+                </td>
+                <td>
+                    <button type="button" onclick="location.href='/userDelete.do?id=${user.getId()}'">delete</button>
+                </td>
             </tr>
         </c:forEach>
     </table>
-</form>
-<a href="/">Go to Main</a>
+    <button type="button" onclick="location.href='/userPlus.do';">create</button>
+
+    <a href="/">Go to Main</a>
 </body>
 </html>

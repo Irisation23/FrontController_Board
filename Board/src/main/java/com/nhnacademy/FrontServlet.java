@@ -3,7 +3,8 @@ package com.nhnacademy;
 import com.nhnacademy.board.command.Command;
 import com.nhnacademy.board.command.LoginFormController;
 import com.nhnacademy.board.command.LoginProcessingController;
-import com.nhnacademy.board.command.LogoutController;
+import com.nhnacademy.board.command.LogoutProcessingController;
+import com.nhnacademy.board.command.UsersFormController;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -51,7 +52,9 @@ public class FrontServlet extends HttpServlet {
         } else if ("/login.do".equals(servletPath) && "POST".equalsIgnoreCase(method)) {
             command = new LoginProcessingController();
         } else if ("/logout.do".equals(servletPath)) {
-            command = new LogoutController();
+            command = new LogoutProcessingController();
+        } else if ("/users.do".equalsIgnoreCase(servletPath) && "GET".equalsIgnoreCase(method)){
+            command = new UsersFormController();
         }
 
         return command;

@@ -17,6 +17,9 @@ public class WebAppInitializer implements ServletContainerInitializer {
         UserRepository userRepository = new UserRepositoryImpl();
         userRepository.add(new UserImpl("admin","12345","관리자",null));
         userRepository.add(new UserImpl("kim","123","김훈민","아직음슴."));
+        userRepository.add(new UserImpl("jo","123","조재철","아직음슴."));
+        userRepository.add(new UserImpl("lee","123","이제훈","아직음슴."));
+        userRepository.add(new UserImpl("choi","123","최정우","아직음슴."));
 
         servletContext.setAttribute("userRepository", userRepository);
     }

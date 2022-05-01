@@ -1,14 +1,16 @@
 package com.nhnacademy.board.userdomain;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class UserRepositoryImpl implements UserRepository{
-    private Map<String,User> userRepositoryMap = new HashMap<>();
+    private Map<String,User> userRepository = new HashMap<>();
 
     @Override
     public void add(User user) {
-        userRepositoryMap.put(user.getId(), user);
+        userRepository.put(user.getId(), user);
     }
 
     @Override
@@ -23,11 +25,11 @@ public class UserRepositoryImpl implements UserRepository{
 
     @Override
     public User getUser(String id) {
-        return userRepositoryMap.get(id);
+        return userRepository.get(id);
     }
 
-    @Override
-    public Map<String, User> getUsers() {
-        return userRepositoryMap;
+    public List<User> getUsers() {
+        return new ArrayList<>(userRepository.values());
+
     }
 }

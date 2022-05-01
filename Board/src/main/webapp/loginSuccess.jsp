@@ -13,6 +13,7 @@
     <a href="/logout.do"><fmt:message key="logout" bundle="${message}" /></a><br />
     <br />
 
-    <a href="/">Go to Main</a>
+    <a href="/board.do">Go to Board</a>
+    <a href="/users.do">Check the Members</a>
 </body>
 </html>

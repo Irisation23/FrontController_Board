@@ -1,6 +1,6 @@
 package com.nhnacademy.board.userdomain;
 
-public class UserImpl implements User{
+public class UserImpl implements User {
     String id;
     String pwd;
     String name;
@@ -13,7 +13,8 @@ public class UserImpl implements User{
         this.profileImg = profileImg;
     }
 
-    public UserImpl(){}
+    public UserImpl() {
+    }
 
     @Override
     public String getId() {

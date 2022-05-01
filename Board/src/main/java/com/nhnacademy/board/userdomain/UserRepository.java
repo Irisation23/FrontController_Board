@@ -1,6 +1,6 @@
 package com.nhnacademy.board.userdomain;
 
-import java.util.Map;
+import java.util.List;
 
 public interface UserRepository {
     void add(User user);
@@ -8,5 +8,5 @@ public interface UserRepository {
     User remove(String id);
 
     User getUser(String id);
-    Map<String , User> getUsers();
+    List<User> getUsers();
 }
